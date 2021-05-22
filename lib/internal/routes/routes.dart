@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:remontina/internal/routes/routes_list.dart';
 
@@ -19,7 +18,7 @@ class Routes {
 
   static void _configureRoutes() {
     _handlers.handlers.forEach((path, handler) {
-      router.define(path, handler: handler);
+      router.define(path, handler: handler, transitionType:  TransitionType.fadeIn);
     });
   }
 }
