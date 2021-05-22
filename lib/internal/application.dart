@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:remontina/presentation/home/home_screen.dart';
+import 'package:remontina/internal/routes/routes.dart';
+import 'package:remontina/presentation/root/root_screen.dart';
 
-class Application extends StatelessWidget {
+class Application extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _ApplicationState();
+}
+
+class _ApplicationState extends State<Application> {
+  _ApplicationState() {
+    Routes.init();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Remontina',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(title: 'Flutter Demo Home Page'),
+      onGenerateRoute: Routes.router.generator,
+      home: RootScreen(),
     );
   }
 }
