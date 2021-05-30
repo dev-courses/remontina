@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remontina/internal/routes/routes.dart';
+import 'package:remontina/presentation/ui/app_colors.dart';
 
 class RootScreen extends StatefulWidget {
   @override
@@ -7,7 +8,8 @@ class RootScreen extends StatefulWidget {
 }
 
 class _RootScreenState extends State<RootScreen> {
-  GlobalKey<NavigatorState> primaryNavigatorKey = GlobalKey(debugLabel: 'primary_navigator');
+  GlobalKey<NavigatorState> primaryNavigatorKey =
+      GlobalKey(debugLabel: 'primary_navigator');
 
   int _index = 0;
 
@@ -50,7 +52,8 @@ class _RootScreenState extends State<RootScreen> {
     if (index == 0) {
       primaryNavigatorKey.currentState?.pushReplacementNamed(Routes.to.main());
     } else if (index == 1) {
-      primaryNavigatorKey.currentState?.pushReplacementNamed(Routes.to.repairs());
+      primaryNavigatorKey.currentState
+          ?.pushReplacementNamed(Routes.to.repairs());
     }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remontina/presentation/home/widgets/big_card.dart';
+import 'package:remontina/presentation/ui/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({
@@ -14,14 +15,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: AppColors.backgroundColorGreen,
+      appBar: AppBar(
+        backgroundColor: AppColors.boxDecorationBigCardGreen,
+      ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+        padding: EdgeInsets.all(15.0),
         children: [
           BigCard(
             title: 'Новый ремонт',
             description:
-                'Описание... описание... описание... описание... описание... описание... описание... описание... описание... описание.... описание... описание... а это не должно влезть.',
+                'Описание описание описание описание описание описание описание описание описание описание описание описание.',
             imageUrl: 'assets/images/remont_1.jpg',
           ),
         ],
