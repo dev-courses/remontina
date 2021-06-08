@@ -20,7 +20,7 @@ class BigCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+      padding: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: AppColors.boxDecorationBigCardGreen,
         borderRadius: BorderRadius.circular(10),
