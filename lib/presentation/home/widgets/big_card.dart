@@ -16,13 +16,13 @@ class BigCard extends StatelessWidget {
     this.imageUrl,
     this.onTap,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
       decoration: BoxDecoration(
         color: AppColors.boxDecorationBigCardGreen,
-        // border: Border.all(color: AppColors.borderBigCardGreen, width: 2.0),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -52,7 +52,7 @@ class BigCard extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(width: 10.0),
+          if (imageUrl != null) SizedBox(width: 10.0),
           if (imageUrl != null)
             Image.asset(
               imageUrl!,
