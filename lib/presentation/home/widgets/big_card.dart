@@ -35,9 +35,10 @@ class BigCard extends StatelessWidget {
                   title,
                   textAlign: TextAlign.left,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: AppColors.textBigCardWhite),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: AppColors.textBigCardWhite,
+                  ),
                 ),
                 SizedBox(height: 12.0),
                 Text(
