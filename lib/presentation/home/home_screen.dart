@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:remontina/internal/routes/routes.dart';
 import 'package:remontina/presentation/home/widgets/big_card.dart';
 import 'package:remontina/presentation/ui/app_colors.dart';
 
@@ -15,21 +16,22 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColorGreen,
-      appBar: AppBar(
-        backgroundColor: AppColors.boxDecorationBigCardGreen,
-      ),
+      appBar: AppBar(),
       body: ListView(
         padding: EdgeInsets.all(15.0),
         children: [
           BigCard(
             title: 'Новый ремонт',
-            description:
-                'Описание описание описание описание описание описание описание описание описание описание описание описание.',
-            imageUrl: 'assets/images/remont_1.jpg',
+            description: 'Создайте новый ремонт - выберите тип, количество комнат и примерный бюджет.',
+            onTap: _goToNewRepair,
           ),
         ],
       ),
     );
+  }
+
+  void _goToNewRepair() {
+    print('dasdsd');
+    Navigator.pushNamed(context, Routes.to.newRepair());
   }
 }

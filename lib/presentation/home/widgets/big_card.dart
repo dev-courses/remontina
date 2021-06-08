@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:remontina/presentation/ui/app_colors.dart';
+import 'package:remontina/presentation/ui/consts.dart';
 
 class BigCard extends StatelessWidget {
   final String title;
@@ -19,12 +20,32 @@ class BigCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: borderRadius10,
+      child: Container(
+        height: 120,
+        decoration: BoxDecoration(
+          borderRadius: borderRadius10,
+          color: AppColors.backgroundColorGreen,
+        ),
+        child: Stack(
+          children: [
+            _buildContent(),
+            Material(
+              type: MaterialType.transparency,
+              child: InkWell(
+                onTap: onTap,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContent() {
     return Container(
       padding: EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        color: AppColors.boxDecorationBigCardGreen,
-        borderRadius: BorderRadius.circular(10),
-      ),
       child: Row(
         children: [
           Flexible(
@@ -37,7 +58,6 @@ class BigCard extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: AppColors.textBigCardWhite,
                   ),
                 ),
                 SizedBox(height: 12.0),
@@ -47,7 +67,6 @@ class BigCard extends StatelessWidget {
                   maxLines: 2,
                   style: const TextStyle(
                     fontSize: 14,
-                    color: AppColors.textBigCardWhite,
                   ),
                 ),
               ],
